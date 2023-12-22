@@ -52,6 +52,7 @@ export const updateUser = async (req, res) => {
       id,
     }
   );
+
   res.json(`User Updated succesfully`);
 };
 
