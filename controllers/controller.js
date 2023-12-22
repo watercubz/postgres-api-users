@@ -34,7 +34,7 @@ export const createUser = async (req, res) => {
     res.json({
       message: "Users Added SuccesFully",
       body: {
-        book: { name, email },
+        user: { name, email },
       },
     });
   } catch (error) {

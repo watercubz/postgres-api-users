@@ -1,0 +1,16 @@
+
+### get all users
+GET http://localhost:4000/users  
+
+### get user by id
+
+GET http://localhost:4000/users/2
+
+### create user
+
+POST  http://localhost:4000/users/
+
+{
+    "name": "jonhatan",
+    "email": "johatan@gmail.com"
+}

@@ -5,7 +5,7 @@ const { Pool } = pkg;
 const config = {
   user: "postgres",
   host: "localhost",
-  password: "", // <--- your password postgrest
+  password: "sosadev16", // <--- your password postgrest
   database: "users",
 };
 
