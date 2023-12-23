@@ -6,10 +6,11 @@ import {
   deleteUser,
   updateUser,
 } from "../controllers/controller.js";
+import { verifyToken } from "./index.routes.js";
 
 const router = Router();
 
-router.get("/users", getUsers); // <--- get all users
+router.get("/users", verifyToken, getUsers); // <--- get all users
 router.get("/users/:id", getUserById); // <--- get user by id
 
 router.post("/users", createUser); // <--- create user
