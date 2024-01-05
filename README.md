@@ -19,6 +19,7 @@
 ## Technologies
 
 - Node.js
+- Jwt
 - Express
 - Postgres sql
 - Cors
