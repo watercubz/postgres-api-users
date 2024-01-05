@@ -1,7 +1,7 @@
 
 ### get all users
 GET http://localhost:4000/users  
-
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDMzNTI5MjcsImV4cCI6MTcwMzQzOTMyN30.2XofcXdlceg1wgN3QwbkgqLbAoevXHqEhEMxUdbnzWo
 ### get user by id
 
 GET http://localhost:4000/users/2

@@ -1,7 +1,5 @@
 import { Router } from "express";
-import jwt from "jsonwebtoken";
 import { TOKEN_SECRET } from "../config/config.js";
-
 const router = Router();
 
 router.get("/", (req, res) => {
@@ -44,46 +42,14 @@ router.get("/", (req, res) => {
     <h1>Login</h1>
   </head>
   <body>
-    <form method="POST" action="/auth">
-      Name: <input type="text" name="text"><br>
-      Password: <input type="password" name="password"><br>
+    <form method="POST" action="">
+      Name: <input type="text" name="text"  required><br>
+      Password: <input type="password" name="password"  required><br>
       <input type="submit" value="Login"><br>
     </form>
   </body>
 </html>
 `);
 });
-
-router.post("/auth", (req, res) => {
-  const { username, password } = req.body;
-
-  const user = { username: username };
-
-  const accessToken = generateAccesToken(user);
-
-  res.redirect(`/users?token=${encodeURIComponent(accessToken)}`);
-});
-
-export const verifyToken = (req, res, next) => {
-  const token = req.query.token;
-
-  if (!token) {
-    return res.status(401).json({ message: "Access denied" });
-  }
-  jwt.verify(token, TOKEN_SECRET, (err, user) => {
-    if (err) {
-      res.send("Access denied, token expired or incorrect");
-    } else {
-      req.user = user;
-      next();
-    }
-  });
-};
-
-function generateAccesToken(user) {
-  return jwt.sign(user, TOKEN_SECRET, {
-    expiresIn: "24hr",
-  });
-}
 
 export default router;

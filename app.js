@@ -6,9 +6,11 @@ import router from "./routes/index.routes.js";
 const app = express();
 
 app.use(json());
-app.use(router);
-app.use(UserRouter);
 app.use(valideMiddleware());
+
+app.use(router);
+app.use("/api/", UserRouter);
+
 app.disable("x-powered-by");
 
 const PORT = process.env.PORT ?? 4000;
