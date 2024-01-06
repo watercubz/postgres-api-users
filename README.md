@@ -2,18 +2,25 @@
 
 ```
 └── 📁backend-postgres
+    └── .gitignore
     └── app.http
     └── app.js
+    └── 📁auth
+        └── authentication.js
+    └── 📁config
+        └── config.js
     └── 📁controllers
         └── controller.js
     └── 📁database
         └── postgres.js
-        └── postgres.sql
     └── 📁middlewares
         └── cors.js
+        └── validateToken.js
     └── package-lock.json
     └── package.json
-    └── README
+    └── README.md
+    └── 📁routes
+        └── user.routes.js
 ```
 
 ## Technologies
@@ -23,6 +30,7 @@
 - Express
 - Postgres sql
 - Cors
+- cookie-parser
 - pg
 
 ## Getting Started
@@ -53,11 +61,8 @@
 - Create product
 
 ```bash
-   http://localhost:3000/api/users/
+   http://localhost:4000/users
 ```
-
-> [!IMPORTANT]
-> To create a product you need the following parameters
 
 ```json
 {
@@ -77,13 +82,13 @@
 - Update Users
 
 ```bash
-   http://localhost:4000/api/users/{id}
+   http://localhost:4000/users/{id}
 ```
 
 - Delete Users
 
 ```bash
-   http://localhost:4000/api/users/{id}
+   http://localhost:4000/users/{id}
 ```
 
 ### Contributing
