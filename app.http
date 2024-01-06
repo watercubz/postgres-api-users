@@ -1,7 +1,8 @@
 
 ### get all users
-GET http://localhost:4000/users  
-Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDMzNTI5MjcsImV4cCI6MTcwMzQzOTMyN30.2XofcXdlceg1wgN3QwbkgqLbAoevXHqEhEMxUdbnzWo
+GET http://localhost:4000/api/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpYXQiOjE3MDQ1NjMxOTQsImV4cCI6MTcwNDY0OTU5NH0.SYkX_wvjBbYuY-fdgxgsTeDxdHkx_bdeKau9twxaJHc
+
 ### get user by id
 
 GET http://localhost:4000/users/2

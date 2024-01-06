@@ -1,5 +1,7 @@
 import { Router } from "express";
+import jwt from "jsonwebtoken";
 import { TOKEN_SECRET } from "../config/config.js";
+
 const router = Router();
 
 router.get("/", (req, res) => {
@@ -42,7 +44,7 @@ router.get("/", (req, res) => {
     <h1>Login</h1>
   </head>
   <body>
-    <form method="POST" action="">
+    <form method="POST" action="/auth">
       Name: <input type="text" name="text"  required><br>
       Password: <input type="password" name="password"  required><br>
       <input type="submit" value="Login"><br>
@@ -51,5 +53,26 @@ router.get("/", (req, res) => {
 </html>
 `);
 });
+
+router.post("/auth", (req, res) => {
+  const { username, password } = req.body;
+
+  const user = { username: username };
+
+  const accessToken = generateAcessToken(user);
+
+  res.cookie("access_token", accessToken, { httpOnly: true });
+
+  res.json({
+    message: "User authenticate",
+    token: accessToken,
+  });
+});
+
+function generateAcessToken(user) {
+  return jwt.sign(user, TOKEN_SECRET, {
+    expiresIn: "24hr",
+  });
+}
 
 export default router;
