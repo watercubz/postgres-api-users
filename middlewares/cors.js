@@ -6,6 +6,7 @@ const ACCEPTED_ORIGINS = [
   "http://localhost:5173",
   "http://localhost:3000",
   "http://localhost:8080",
+  "https://hoppscotch.io"
 ];
 export const valideMiddleware = (accepteorigins = ACCEPTED_ORIGINS) =>
   cors({
