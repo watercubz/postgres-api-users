@@ -6,7 +6,7 @@ export const getUsers = async (req, res) => {
     const result = await client.query("SELECT * FROM users");
     res.status(200).json(result.rows);
   } catch (error) {
-    return res.status(500).json({ message: "Error en la base de datos" });
+    return res.status(500).json({ message: "Internal error database" });
   }
 };
 
@@ -53,7 +53,7 @@ export const updateUser = async (req, res) => {
     }
   );
 
-  res.json(`User Updated succesfully`);
+  res.json("User Updated succesfully");
 };
 
 export const deleteUser = async (req, res) => {
